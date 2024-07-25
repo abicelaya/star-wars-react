@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-export default function CardShip() {
+import ShipListCard from "../../components/ListShips/ShipListCard";
+
+export default function ListShips() {
   const [ships, setShips] = useState([]);
 
   useEffect(() => {
@@ -14,23 +16,15 @@ export default function CardShip() {
 
       const ships = await result.json();
       setShips(ships.results);
-      console.log(ships);
-      return ships;
     };
     fetchShips();
   }, []);
 
   return (
-    <>
-      {ships.map((ship, index) => (
-        <div
-          key={index}
-          className="mt-9 px-4 py-4 w-1/2 mx-auto flex flex-col justify-center text-stone-400 bg-neutral-900"
-        >
-          <h1 className="text-lg">{ship.name}</h1>
-          <p className="text-sm">{ship.model}</p>
-        </div>
+    <div>
+      {ships.map((ship) => (
+        <ShipListCard key={ship.url} ship={ship} />
       ))}
-    </>
+    </div>
   );
 }

@@ -6,6 +6,7 @@ export default {
       color: {
         customYellow: "#fcd34d",
       },
+      fontFamily: {}
     },
   },
   plugins: [require("@tailwindcss/forms")],
