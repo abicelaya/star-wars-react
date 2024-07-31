@@ -14,7 +14,7 @@ const Header = () => {
           <div className="w-1/3 justify-end flex flex-none space-x-4">
             <Link
               to="#"
-              className="text- text-sm hover:text-white hover:underline"
+              className="text- text-sm hover:text-white"
             >
               LOG IN
             </Link>
@@ -25,7 +25,7 @@ const Header = () => {
           </div>
         </div>
         <nav className="mt-9 flex justify-center space-x-9">
-          <Link to="/" className="text-stone-400 text-sm hover:text-white">
+          <Link to="/" className="text-stone-400 text-sm hover:text-white ">
             HOME
           </Link>
           <Link
