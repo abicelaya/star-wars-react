@@ -6,8 +6,8 @@ export default {
       color: {
         customYellow: "#fcd34d",
       },
-      fontFamily: {}
+      fontFamily: {},
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("daisyui")],
 };

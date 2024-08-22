@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { ShipContext } from "../../context/ShipContext"; // Importa el contexto
 import ShipListCard from "../../components/ListShips/ShipListCard";
 
 export default function ListShips() {
-  const [ships, setShips] = useState([]);
-
-  useEffect(() => {
-    const fetchShips = async () => {
-      const urlShips = "https://swapi.dev/api/starships/";
-      const result = await fetch(urlShips, {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      const ships = await result.json();
-      setShips(ships.results);
-      console.log(ships)
-    };
-    fetchShips();
-  }, []);
+  const { ships, loadMoreShips, loading } = useContext(ShipContext);
 
   const extractShipId = (url) => {
     const parts = url.split("/");
@@ -30,6 +15,18 @@ export default function ListShips() {
       {ships.map((ship) => (
         <ShipListCard key={ship.url} ship={ship} id={extractShipId(ship.url)} />
       ))}
+      <div className="text-center mt-4">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <button
+            onClick={loadMoreShips}
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          >
+            View More
+          </button>
+        )}
+      </div>
     </div>
   );
 }
