@@ -13,17 +13,17 @@ const Home = () => {
       }}
     >
       <div className="relative flex flex-col items-end p-6 w-1/3">
-        <h1 className="text-4xl mb-4">Bienvenido a nuestra aplicación</h1>
+        <h1 className="text-4xl mb-4 ">Welcome to the Star Wars Fleet</h1>
         <p className="text-lg mb-6">
-          Aquí podrás encontrar todas las naves disponibles y gestionar tus
-          preferencias.
+          Explore the iconic ships of Star Wars. Discover the Millennium Falcon,
+          Star Destroyers, and more. Get ready for a galaxy of adventures!
         </p>
         <div className="flex justify-center w-full">
           <Link
             to="/starships"
-            className="bg-yellow-500 text-black text-lg py-2 px-6 rounded-full hover:bg-yellow-400 transition-colors"
+            className="bg-yellow-400 font-bold text-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
           >
-            Acceder a las naves
+            View starships
           </Link>
         </div>
       </div>

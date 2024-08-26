@@ -12,11 +12,14 @@ const Header = () => {
             <img src={logo} alt="Logo" className="h-20" />
           </div>
           <div className="w-1/3 justify-end flex flex-none space-x-4">
-            <Link to="#" className="text- text-base hover:text-white">
+            <Link to="/login" className="text- text-base hover:text-white">
               LOG IN
             </Link>
             <span>|</span>
-            <Link to="#" className="text-stone-400 text-base hover:text-white">
+            <Link
+              to="/register"
+              className="text-stone-400 text-base hover:text-white"
+            >
               SIGN UP
             </Link>
           </div>
