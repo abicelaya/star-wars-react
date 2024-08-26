@@ -5,7 +5,7 @@ export default function ShipDetailCard({ ship }) {
     return <div className=" text-stone-400">Cargando...</div>;
   }
   return (
-    <div className="mt-9 px-4 py-4 w-1/2 mx-auto flex flex-col justify-center text-stone-400 bg-neutral-900 border border-yellow-500 shadow-md hover:shadow-yellow-300">
+    <div className="mt-9 px-4 py-4 w-1/2 mx-auto flex flex-col justify-center text-stone-400 bg-neutral-900 border border-white shadow-lg shadow-white">
       <h1 className="text-lg font-bold uppercase">{ship.name}</h1>
       
       <p>

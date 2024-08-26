@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { ShipContext } from "../../context/ShipContext"; // Importa el contexto
+import { ShipContext } from "../../context/ShipContext";
 import ShipListCard from "../../components/ListShips/ShipListCard";
+import skyStars from "../../images/301824.jpg";
 
 export default function ListShips() {
   const { ships, loadMoreShips, loading } = useContext(ShipContext);
@@ -11,21 +12,32 @@ export default function ListShips() {
   };
 
   return (
-    <div>
-      {ships.map((ship) => (
-        <ShipListCard key={ship.url} ship={ship} id={extractShipId(ship.url)} />
-      ))}
-      <div className="text-center mt-4">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <button
-            onClick={loadMoreShips}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-          >
-            View More
-          </button>
-        )}
+    <div
+      className="relative min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${skyStars})`,
+      }}
+    >
+      <div className="container mx-auto py-4">
+        {ships.map((ship) => (
+          <ShipListCard
+            key={ship.url}
+            ship={ship}
+            id={extractShipId(ship.url)}
+          />
+        ))}
+        <div className="text-center mt-4">
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <button
+              onClick={loadMoreShips}
+              className="bg-yellow-500 text-black text-lg py-2 px-6 rounded-full hover:bg-yellow-400 transition-colors"
+            >
+              Ver más
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
