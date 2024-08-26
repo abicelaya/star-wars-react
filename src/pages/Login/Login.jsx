@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
-import skyStars from "../../images/301824.jpg";
+import skyStars from "../../images/sky_stars.webp";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ const Login = () => {
       <div className="card-shape relative">
         <h1 className="text-2xl mb-4 text-white">Login</h1>
         <form onSubmit={handleLogin} className="w-full max-w-xs">
-          {error && <p className="text-red-500 mb-4">{error}</p>}
+          {error && <p className="text-yellow-200 text-center mb-4">{error}</p>}
           <input
             type="email"
             placeholder="Email"
